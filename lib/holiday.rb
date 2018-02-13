@@ -49,16 +49,16 @@ def all_supplies_in_holidays(holiday_supplies_hash)
         supply_string << "  #{holiday.capitalize}: "
       end 
       supply_array.each do |supply|
-      puts supply_array
+     
         if supply_array.last 
         
           supply_string << supply
         else
           supply_string << "#{supply}, "
         end  
-      #puts supply_string
-      end
       puts supply_string
+      end
+      #puts supply_string
     end 
   end  
 end
