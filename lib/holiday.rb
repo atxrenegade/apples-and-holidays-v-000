@@ -56,9 +56,9 @@ def all_supplies_in_holidays(holiday_supplies_hash)
         else
           supply_string << "#{supply}, "
         end  
-      puts supply_string
+      
       end
-      #puts supply_string
+      puts supply_string
     end 
   end  
 end
