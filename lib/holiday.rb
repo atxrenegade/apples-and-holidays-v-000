@@ -34,34 +34,20 @@ end
 
     
     
+
 def all_supplies_in_holidays(holiday_supplies_hash)
-  holiday_supplies_hash.each do |season, holiday| 
-    puts "#{season.to_s.capitalize}:"
-    supply_string = ""
-    holiday.each do |holiday, supply_array|
-      #supply_string = ""
-      holiday = holiday.to_s
-      if holiday.include?("_")
-        holiday = holiday.split("_")
-        holiday.map {|holiday_word| holiday_word.capitalize!} 
-        supply_string << "  #{holiday.join(" ")}: " 
-      else
-        supply_string << "  #{holiday.capitalize}: "
-      end 
-      supply_array.each do |supply|
-     
-        if supply_array.last 
-        
-          supply_string << supply
-        else
-          supply_string << "#{supply}, "
-        end  
-      
+  holiday_supplies_hash.each do|season_hash, holiday_hash| 
+    puts "#{season_hash.to_s.capitalize!}:"
+    holiday_hash.each do |holiday, supply_array|
+      holiday = holiday.to_s.split("_").each do |holiday_word| 
+      holiday_word.capitalize!
       end
-      puts supply_string
-    end 
-  end  
-end
+      print "  #{holiday.join(" ")}:"
+      print " #{supply_array.join(", ")}\n" 
+    end
+  end 
+end    
+
 
 
 def all_holidays_with_bbq(holiday_supplies_hash)
